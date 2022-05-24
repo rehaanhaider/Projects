@@ -1,0 +1,26 @@
+
+
+<div class = "container">
+
+  <h3> People who follow you </h3>
+
+  <table class="table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th colspan="2"></th>
+      <th colspan="2"></th>
+      <th colspan="2"></th>
+
+    </tr>
+  
+    <% @followers.each do |follower| %>
+      <tr>
+        <td> <%= link_to follower.name, feeds_path(user: follower), class: "nav-link" %> </td>
+        <td><%= follower.email %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= link_to 'Back', user_path(current_user.id), class: 'btn btn-primary' %>
+</div>

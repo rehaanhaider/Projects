@@ -1,0 +1,12 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4"> <%= t('.welcome_back') %> <%= @user.name %> !!! </h1>
+    <h3> <%= t('Email') %> - <%= @user.email %> </h3>
+    <%= link_to t('.new_blog'), new_article_path, class: 'btn btn-primary'  %>  
+    <%= link_to t('.view_blog'), articles_path(user: current_user.id), class: 'btn btn-primary' %>
+    <%= link_to t('.follow'), users_path, class: 'btn btn-primary' %>
+    <%= link_to t('.followers'), followers_path(user_id: current_user.id), class: 'btn btn-primary' %>
+    <%= link_to t('.timeline'), timeline_path(), class: 'btn btn-primary' %>
+    <%= link_to t('.people_you_are_following'), followings_path, class: 'btn btn-primary' %>
+  </div>
+</div>

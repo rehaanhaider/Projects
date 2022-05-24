@@ -1,0 +1,28 @@
+<div class = "container">
+
+  <h3> All Users </h3>
+  <table class="table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Email Address</th>
+      <th colspan="2"></th>
+      <th colspan="2"></th>
+      <th colspan="2"></th>
+
+    </tr>
+  
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <% link_to 'get status' ,following_path(user_id: user.id), hidden: :@status %> 
+        <td> <%= link_to 'Follow Profile', follow_path(follower_id: current_user.id,followed_user_id: user.id), class: 'btn btn-primary'  %> </td> 
+      </tr>
+    <% end %>
+  </table>
+
+  <br/>
+  <br/>
+  <%= link_to 'Back', user_path(current_user.id), class: 'btn btn-primary' %>
+
+</div>

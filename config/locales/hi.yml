@@ -1,0 +1,21 @@
+hi:
+  welcome: 'ब्लॉग पोस्ट में आपका स्वागत है'  
+  Home: 'होम पेज'
+  Signup: 'साइनअप पेज'
+  Login: 'लॉग इन करें'
+  Profile: 'प्रोफ़ाइल'
+  Logout: 'लॉगआउट पेज'
+  Email: 'ईमेल'
+  search_blog: 'ब्लॉग खोजें'
+  users:
+    show:
+      new_blog: 'नया ब्लॉग बनाएं'
+      view_blog: 'अपना ब्लॉग देखें'
+      follow: 'नए उपयोगकर्ताओं का अनुसरण करें'
+      followers: 'आपके अनुयायी'
+      timeline: 'समयरेखा फ़ीड'
+      people_you_are_following: 'आपके द्वारा अनुसरण किए गए लोग'
+      welcome_back: 'फिर से स्वागत है'
+  sessions:
+    create:
+      invalid_request: 'अमान्य ईमेल/पासवर्ड संयोजन'

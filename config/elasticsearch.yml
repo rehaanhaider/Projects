@@ -1,0 +1,11 @@
+defaults: &defaults
+  clusters:
+    '1':
+      endpoint: localhost:9200
+      request_timeout: 3
+      open_timeout: 3
+      replication: 0
+
+
+development:
+  <<: *defaults

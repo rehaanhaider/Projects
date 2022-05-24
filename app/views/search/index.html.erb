@@ -1,0 +1,24 @@
+<div class = "container">
+  <table class="table table-striped">
+    <tr>
+      <th>Title</th>
+      <th>Text</th>
+      <th colspan="2"></th>
+      <th colspan="2"></th>
+      <th colspan="2"></th>
+
+    </tr>
+  
+    <% @response.each do |article| %>
+      <tr>
+        <td><%= article.title %></td>
+        <td><%= article.text %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <br/>
+  <br/>
+  <%= link_to 'Back', user_path(current_user.id), class: 'btn btn-primary' %>
+
+</div>

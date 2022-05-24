@@ -1,0 +1,22 @@
+
+
+<div class = "container">
+
+<h3> People you are following </h3>
+
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th colspan="2"></th>
+    <th colspan="2"></th>
+    <th colspan="2"></th>
+
+  </tr>
+
+  <%= render partial: 'follow/follower', collection: @users, cached: true %>
+</table>
+
+<%= link_to 'Back', user_path(current_user.id), class: 'btn btn-primary' %>
+</div>
+ 

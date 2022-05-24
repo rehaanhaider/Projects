@@ -1,0 +1,52 @@
+
+<div class = "container">
+
+  <h1> Blog </h1>
+  <p>
+    <strong>Title:</strong>
+    <%= @article.title %>
+  </p>
+  <p>
+    <strong>Text:</strong>
+    <%= @article.text %>
+  </p>
+
+  <% if @article.comments.length >= 1 %>
+  <h3>Comments</h3>
+  <% @article.comments.each do |comment| %>
+
+    <p>
+      <strong>Commenter:</strong>
+      <%= comment.commenter %>
+    </p>
+  
+    <p>
+      <strong>Comment:</strong>
+      <%= comment.body %>
+    </p>
+    <p>
+      <%= link_to 'Destroy Comment', [comment.article, comment],
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+    </p>
+  <% end %>
+  <% end %>
+
+  <h3>Add a comment:</h3>
+  <%= form_for([@article, @article.comments.build]) do |f| %>
+    <p>
+      <%= f.label :commenter %><br>
+      <%= f.text_field :commenter %>
+    </p>
+    <p>
+      <%= f.label :body %><br>
+      <%= f.text_area :body %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+
+  <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-primary' %> 
+  <%= link_to 'Back', articles_path, class: 'btn btn-primary' %>
+</div>

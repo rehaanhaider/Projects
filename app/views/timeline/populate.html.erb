@@ -1,0 +1,24 @@
+<div class = "container">
+  <h3> TimeLine </h3>
+  <table class="table table-striped">
+    <tr>
+      <th>Title</th>
+      <th>Text</th>
+      <th>User</th>
+    </tr>
+  
+    <% @timeline_articles.each do |article| %>
+      <tr>
+        <td><%= article.title %></td>
+        <td><%= article.text %></td>
+        <td><%= article.user_id %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <br/>
+  <br/>
+  <%= link_to 'Back', user_path(current_user.id), class: 'btn btn-primary' %>
+  
+
+</div>
