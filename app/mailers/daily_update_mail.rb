@@ -1,6 +1,6 @@
 class DailyUpdateMail < ApplicationMailer
 
-    default from: "rehaan.haider09@gmail.com"
+    default from: "abc@xyz.com"
 
     def mailer(params)
         @url  = 'http://example.com/login'
