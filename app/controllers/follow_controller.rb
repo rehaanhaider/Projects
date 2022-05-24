@@ -14,8 +14,7 @@ class FollowController < ApplicationController
     end
 
     def show
-        @user = User.find(current_user.id)
-        @followers = @user.followers
+        @followers = User.find(current_user.id).followers
     end
 
 

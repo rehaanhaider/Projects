@@ -4,14 +4,14 @@
     <tr>
       <th>Title</th>
       <th>Text</th>
-      <th>User</th>
+      <th>Username</th>
     </tr>
   
     <% @timeline_articles.each do |article| %>
       <tr>
         <td><%= article.title %></td>
         <td><%= article.text %></td>
-        <td><%= article.user_id %></td>
+        <td><%= User.find(article.user_id).name %></td>
       </tr>
     <% end %>
   </table>

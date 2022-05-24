@@ -6,31 +6,19 @@ class TimelineController < ApplicationController
 
     def populate
         
-        @user = User.find(current_user.id)
-        articles = Article.all
-        @followers = @user.followings
+        @followers = User.find(current_user.id).followings
         @timeline_articles = []
-        articles.each do |article|
+        Article.find_each do |article|
             @followers.each do |follower|
                 if article.user_id == follower.id
                     @timeline_articles << article
                 end
             end
         end
-
-        @final_articles = []
-        @timeline_articles.each do |article|
-            id = article[:user_id]
-            name = User.find(id).name
-            article = article.attributes
-            article['username'] = name
-            @final_articles << article
-        end
     end
 
     def feeds
-        @user = User.find(params[:user])
-        @user_articles = @user.articles
+        @user_articles = User.find(params[:user]).articles
     end
 
 end

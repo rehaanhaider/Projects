@@ -1,7 +1,5 @@
 class UserCreationMail < ApplicationMailer
-
     default from: "abc@xyz.com"
-
     def mailer(params)
         @url  = 'http://example.com/login'
         @user = params
