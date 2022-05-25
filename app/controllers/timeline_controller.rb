@@ -4,8 +4,7 @@ class TimelineController < ApplicationController
     before_filter :session_expires
     before_filter :update_session_time
 
-    def populate
-        
+    def populate        
         @followers = User.find(current_user.id).followings
         @timeline_articles = []
         Article.find_each do |article|

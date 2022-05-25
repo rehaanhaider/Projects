@@ -9,9 +9,11 @@
 
 Article.__elasticsearch__.create_index!(force: true)
 
-User.create!(email: 'a@samplep.com', password: '123456', name: 'aaa')
-User.create!(email: 'b@samplep.com', password: '123456', name: 'bbbb')
+User.create!(email: 'a1@samplep.com', password: '123456', name: 'aaa')
+User.create!(email: 'b2@samplep.com', password: '123456', name: 'bbbb')
+User.create!(email: 'c2@samplep.com', password: '123456', name: 'cccc')
 
 
-Article.create!(text: 'sample blog', title: 'this is title')
-Article.create!(text: 'sample blog 2', title: 'this is title 2')
+
+Article.create!(text: 'sample blog1', title: 'this is title1')
+Article.create!(text: 'sample blog2', title: 'this is title2')
